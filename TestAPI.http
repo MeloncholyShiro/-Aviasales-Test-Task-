@@ -1,0 +1,38 @@
+GET https://front-test.beta.aviasales.ru/search
+
+###
+
+GET https://front-test.beta.aviasales.ru/tickets?searchId=2twwc
+
+###
+
+GET https://pics.avs.io/99/36/S7.png
+
+###
+
+GET https://pics.avs.io/99/36/SU.png
+
+###
+
+GET https://pics.avs.io/99/36/MH.png
+
+###
+
+GET https://pics.avs.io/99/36/FV.png
+
+###
+
+GET https://pics.avs.io/99/36/EK.png
+
+###
+
+GET https://jsonplaceholder.typicode.com/postsa/1
+
+###
+
+PUT https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json
+
+{
+"id": 20
+}

@@ -1,0 +1,110 @@
+{
+	"name": "aviasales-test-task",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.11.5",
+		"@testing-library/react": "^11.1.0",
+		"@testing-library/user-event": "^12.1.10",
+		"clsx": "^1.1.1",
+		"date-fns": "^2.16.1",
+		"history": "^5.0.0",
+		"idb": "^5.0.7",
+		"nanoid": "^3.1.16",
+		"node-sass": "^4.14.1",
+		"normalize.css": "^8.0.1",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-redux": "^7.2.2",
+		"react-redux-loading-bar": "^5.0.0",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "^4.0.0",
+		"react-spring": "^8.0.27",
+		"redux": "^4.0.5",
+		"redux-devtools-extension": "^2.13.8",
+		"redux-logger": "^3.0.6",
+		"redux-thunk": "^2.3.0",
+		"source-map-explorer": "^2.5.0",
+		"vercel": "^20.1.2"
+	},
+	"devDependencies": {
+		"@types/jest": "^26.0.15",
+		"@types/node": "^14.14.6",
+		"@types/react": "^16.9.55",
+		"@types/react-dom": "^16.9.9",
+		"@types/react-redux": "^7.1.9",
+		"@types/react-router-dom": "^5.1.6",
+		"@types/redux-logger": "^3.0.8",
+		"@typescript-eslint/eslint-plugin": "^4.6.0",
+		"@typescript-eslint/parser": "^4.6.0",
+		"babel-eslint": "^10.1.0",
+		"eslint-config-airbnb-typescript": "^12.0.0",
+		"eslint-config-prettier": "^6.15.0",
+		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-no-use-extend-native": "^0.5.0",
+		"eslint-plugin-optimize-regex": "^1.2.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.21.5",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"eslint-plugin-sonarjs": "^0.5.0",
+		"eslint-plugin-unicorn": "^23.0.0",
+		"fake-indexeddb": "^3.1.2",
+		"husky": "^4.3.0",
+		"lint-staged": "^10.5.0",
+		"prettier": "^2.1.2",
+		"typescript": "^4.0.5"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"build-profile": "npm run build -- --profile",
+		"test": "react-scripts test --watchAll=false",
+		"test-watch": "react-scripts test",
+		"test-coverage": "react-scripts test --watchAll=false --coverage",
+		"test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
+		"eject": "react-scripts eject",
+		"lint": "eslint --debug --ext .js,.jsx,.ts,.tsx src/",
+		"lint:write": "eslint --debug --ext .js,.jsx,.ts,.tsx src/ --fix",
+		"prettier": "prettier --write src/**",
+		"analyze": "source-map-explorer 'build/static/js/*.js'"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"pre-push": "npm run test"
+		}
+	},
+	"lint-staged": {
+		"*.(js|jsx|ts|tsx)": [
+			"npm run lint:write",
+			"npm run prettier"
+		]
+	},
+	"nyc": {
+		"reporter": [
+			"lcov",
+			"text"
+		],
+		"tempDirectory": "./coverage"
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.{js,jsx,ts,tsx}",
+			"!<rootDir>/node_modules/",
+			"!src/serviceWorker.ts"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}

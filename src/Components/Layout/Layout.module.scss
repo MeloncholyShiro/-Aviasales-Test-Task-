@@ -1,0 +1,25 @@
+.header {
+	padding: 50px 0;
+	display: flex;
+	justify-content: center;
+	user-select: none;
+
+	@media screen and (max-width: 550px) {
+		padding: 25px 0;
+	}
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	max-width: 755px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+.loading {
+	position: fixed;
+	top: 0;
+	background-color: #2196f3;
+	height: 3px;
+}

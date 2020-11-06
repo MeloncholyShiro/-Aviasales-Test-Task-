@@ -1,0 +1,16 @@
+{
+	"cSpell.words": [
+		"aviasales",
+		"browserslist",
+		"clsx",
+		"devtools",
+		"esnext",
+		"plusplus",
+		"readwrite",
+		"sonarjs"
+	],
+	"prettier.packageManager": "pnpm",
+	"npm.packageManager": "pnpm",
+	"eslint.packageManager": "pnpm",
+	"typescript.tsdk": "node_modules\\typescript\\lib"
+}

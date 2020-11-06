@@ -1,0 +1,92 @@
+.ticket {
+	height: 184px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background: #ffffff;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+
+	@media screen and (max-width: 550px) {
+		padding: 10px;
+		margin: 0 10px 20px;
+		height: 184px;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding-bottom: 20px;
+		padding-right: 30px;
+
+		@media screen and (max-width: 550px) {
+			padding-right: 0;
+		}
+	}
+
+	&__logotype {
+		pointer-events: none;
+		user-select: none;
+		margin-left: auto;
+
+		@media screen and (min-width: 550px) {
+			width: 110px;
+		}
+	}
+
+	&__price {
+		color: #2196f3;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 24px;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+
+		&:nth-child(2) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__info {
+		flex: 0 0 140px;
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		&:nth-child(2n) {
+			margin: 0 20px;
+
+			@media screen and (max-width: 550px) {
+				margin: 0 5px;
+			}
+		}
+
+		@media screen and (max-width: 550px) {
+			flex: 0 0 90px;
+			text-align: center;
+		}
+	}
+
+	&__cell {
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 12px;
+		line-height: 18px;
+		color: #a0b0b9;
+	}
+
+	&__data {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 21px;
+		color: #4a4a4a;
+	}
+}

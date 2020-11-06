@@ -1,0 +1,98 @@
+:root {
+	--color-tab: #ffffff;
+	--color-tab-text: #4a4a4a;
+	--color-tab--active: #2196f3;
+	--color-tab-text--active: #ffffff;
+	--color-tab-border: #dfe5ec;
+	--color-tab-border--active: transparent;
+	--color-tab-border--focused: rgba(13, 64, 233, 0.5);
+}
+
+%visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+.sorting {
+	display: flex;
+	flex-flow: column nowrap;
+	text-align: center;
+	max-width: 503px;
+	min-width: 320px;
+	--color-tab-state: var(--color-tab);
+	--color-tab-test-state: var(--color-tab-text);
+	--color-tab-border-state: var(--color-tab-border);
+
+	&__modes {
+		display: flex;
+		padding-bottom: 20px;
+
+		@media screen and (max-width: 550px) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__mode {
+		&:first-child {
+			border-radius: 5px 0 0 5px;
+		}
+
+		&:last-child {
+			border-radius: 0 5px 5px 0;
+		}
+
+		@media screen and (max-width: 550px) {
+			&:first-child {
+				margin-bottom: 10px;
+			}
+
+			&:nth-child(n) .sorting__button {
+				border-radius: 5px;
+			}
+		}
+	}
+
+	&__radio {
+		@extend %visually-hidden;
+
+		&:checked + .sorting__button {
+			--color-tab-border-state: var(--color-tab-border--active);
+			--color-tab-text-state: var(--color-tab-text--active);
+			--color-tab-state: var(--color-tab--active);
+		}
+		&:focus + .sorting__button {
+			--color-tab-border-state: var(--color-tab-border--focused);
+		}
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 252px;
+		height: 50px;
+
+		cursor: pointer;
+		user-select: none;
+
+		font-weight: 600;
+		color: var(--color-tab-text-state);
+		font-size: 12px;
+		letter-spacing: 0.5px;
+		line-height: 20px;
+		text-transform: uppercase;
+
+		border: 1px solid var(--color-tab-border-state);
+		border-radius: inherit;
+
+		background-color: var(--color-tab-state);
+	}
+}

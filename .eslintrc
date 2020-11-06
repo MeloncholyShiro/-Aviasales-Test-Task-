@@ -1,0 +1,76 @@
+{
+	"extends": [
+		"react-app",
+		"airbnb-typescript",
+		"airbnb/hooks",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:unicorn/recommended",
+		"plugin:sonarjs/recommended",
+		"plugin:promise/recommended",
+		"plugin:no-use-extend-native/recommended",
+		"plugin:optimize-regex/recommended",
+		"eslint-config-prettier",
+		"prettier/react"
+	],
+	"plugins": [
+		"@typescript-eslint",
+		"unicorn",
+		"sonarjs",
+		"promise",
+		"no-use-extend-native",
+		"optimize-regex",
+		"react"
+	],
+	"env": {
+		"browser": true,
+		"jest": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 11,
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"import/prefer-default-export": "off",
+		"@typescript-eslint/no-unused-vars": "off",
+		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		"@typescript-eslint/indent": "off",
+		"no-tabs": "off",
+		"jsx-a11y/label-has-associated-control": "off",
+		"no-restricted-syntax": "off",
+		"react/state-in-constructor": "off",
+		"unicorn/no-null": "off",
+		"react/require-default-props": [
+			"warn",
+			{
+				"ignoreFunctionalComponents": true
+			}
+		],
+		"unicorn/filename-case": [
+			"warn",
+			{
+				"cases": {
+					"camelCase": true,
+					"pascalCase": true
+				},
+				"ignore": ["URL", "API"]
+			}
+		],
+		"unicorn/prevent-abbreviations": [
+			"error",
+			{
+				"replacements": {
+					"props": {
+						"properties": false
+					}
+				}
+			}
+		],
+		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+		"react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+		"sonarjs/prefer-immediate-return": "off"
+	}
+}
